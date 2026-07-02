@@ -3,7 +3,6 @@ type SectionHeadingProps = {
   title: string;
   script?: string;
   align?: "center" | "left";
-  light?: boolean;
 };
 
 export function SectionHeading({
@@ -11,13 +10,18 @@ export function SectionHeading({
   title,
   script,
   align = "center",
-  light = false,
 }: SectionHeadingProps) {
   return (
     <div className={align === "center" ? "text-center" : "text-left"}>
       {eyebrow && (
-        <p className={`mb-2 text-xs font-semibold uppercase tracking-[0.3em] ${light ? "text-cream/60" : "text-maroon-bright/70"}`}>
+        <p
+          className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.35em] text-cream ${
+            align === "center" ? "justify-center" : "justify-start"
+          }`}
+        >
+          <span className="text-gold">✦</span>
           {eyebrow}
+          <span className="text-gold">✦</span>
         </p>
       )}
       <h2 className="font-serif text-3xl font-bold uppercase tracking-[0.08em] sm:text-4xl">
