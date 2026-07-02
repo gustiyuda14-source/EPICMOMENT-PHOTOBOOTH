@@ -16,11 +16,11 @@ export default function HomePage() {
     <>
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden text-center">
         <Image
-          src="/images/portfolio/wedding/wedding-03.jpg"
-          alt="Momen wedding di photo booth Epic Moment"
+          src="/images/hero/home-hero.png"
+          alt="Unit Epic Moment Photo Booth dengan studio lighting"
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-maroon-deep/80 via-maroon-deep/60 to-maroon-deep" />
         <SparkleField />
