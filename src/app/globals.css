@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-maroon-deep text-cream font-sans;
+  }
+}
+
+@layer components {
+  .sparkle {
+    position: absolute;
+    background: theme("colors.gold.light");
+    clip-path: polygon(
+      50% 0%,
+      60% 40%,
+      100% 50%,
+      60% 60%,
+      50% 100%,
+      40% 60%,
+      0% 50%,
+      40% 40%
+    );
+    animation: sparkle-pulse 2.4s infinite ease-in-out alternate;
+  }
+
+  .radiating-lines {
+    background-image: radial-gradient(
+        circle at 100% 50%,
+        transparent 20%,
+        rgba(255, 255, 255, 0.25) 21%,
+        rgba(255, 255, 255, 0.25) 34%,
+        transparent 35%,
+        transparent
+      ),
+      radial-gradient(
+        circle at 0% 50%,
+        transparent 20%,
+        rgba(255, 255, 255, 0.25) 21%,
+        rgba(255, 255, 255, 0.25) 34%,
+        transparent 35%,
+        transparent
+      );
+    background-size: 150% 150%;
+    background-position: center;
+    opacity: 0.12;
+  }
+
+  .photo-strip {
+    @apply bg-cream p-2 pb-6 shadow-xl rotate-[-2deg];
+  }
+}
+
+@keyframes sparkle-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}

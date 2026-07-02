@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# claude-flow local state
+.claude-flow/
+
+# raw camera files (not web assets)
+*.DNG
+
+# raw source assets: original photos, PDF price list, and third-party design
+# references used during design research — already curated into public/images.
+# Kept locally, not pushed (repo is public; avoids bloat + competitor IP).
+/epic moment photobooth/
+/Screenshot*.png
