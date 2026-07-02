@@ -36,3 +36,6 @@ next-env.d.ts
 # Kept locally, not pushed (repo is public; avoids bloat + competitor IP).
 /epic moment photobooth/
 /Screenshot*.png
+/LOGO UTAMA*.png
+.vercel
+.env*

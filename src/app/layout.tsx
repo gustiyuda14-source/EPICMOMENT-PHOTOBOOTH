@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   description:
     "Sewa photo booth premium di Kendari untuk wedding, corporate event, dan acara spesial lainnya. Cetak instan, custom layout, crew profesional.",
-  icons: { icon: "/logo.svg" },
+  icons: { icon: "/favicon.png" },
   openGraph: {
     title: `${SITE.name} | Sewa Photobooth ${SITE.city}`,
     description: "Make Your Event Memorable — premium photo booth rental di Kendari.",
@@ -45,7 +45,7 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: SITE.name,
-  image: "https://epicmomentphotobooth.com/logo.svg",
+  image: "https://epicmomentphotobooth.com/images/brand/logo-epicmoment.png",
   telephone: `+${SITE.phoneWa}`,
   areaServed: SITE.city,
   address: {
