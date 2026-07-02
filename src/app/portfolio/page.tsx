@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
+import { FrameGallery } from "@/components/FrameGallery";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -22,6 +23,22 @@ export default function PortfolioPage() {
 
       <div className="mt-14">
         <PortfolioGallery />
+      </div>
+
+      <div className="mt-24 border-t border-cream/10 pt-20">
+        <SectionHeading
+          eyebrow="Custom Layout"
+          title="Contoh Desain Frame"
+          script="pilih gaya favoritmu"
+        />
+        <p className="mx-auto mt-6 max-w-xl text-center text-sm font-light text-cream/70">
+          Setiap frame di-custom sesuai tema acara Anda. Ini beberapa contoh hasil cetak
+          Photo Strip (2R) dan Polaroid (4R) dari klien kami.
+        </p>
+
+        <div className="mt-14">
+          <FrameGallery />
+        </div>
       </div>
     </div>
   );
