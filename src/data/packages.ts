@@ -12,6 +12,7 @@ export type PriceTable = {
   description: string;
   rows: PriceRow[];
   overageNote: string;
+  recommended?: boolean;
 };
 
 export type FormatPricing = {
@@ -30,9 +31,10 @@ export const PRICING: FormatPricing[] = [
     tables: [
       {
         tier: "unlimited",
-        title: "Unlimited Prints",
+        title: "Unlimited Prints — Puas Tanpa Batas",
         description:
-          "Jumlah cetak foto bebas/tidak terbatas selama jam operasional masih berlangsung.",
+          "Biarkan setiap tamu pulang membawa kenangan — tanpa kompromi, tanpa hitungan cetak.",
+        recommended: true,
         rows: [
           { label: "2 Jam Operasional", price: 3_000_000 },
           { label: "3 Jam Operasional", price: 3_500_000 },
@@ -42,9 +44,9 @@ export const PRICING: FormatPricing[] = [
       },
       {
         tier: "limited",
-        title: "Limited Prints",
+        title: "Limited Prints — Hemat, Tetap Berkesan",
         description:
-          "Jumlah cetak foto terbatas sesuai jumlah print yang di order dengan batas maksimal jam operasional.",
+          "Kontrol budget tanpa mengurangi keseruan momen spesial Anda.",
         rows: [
           { label: "100 Print — Max 2 Jam", price: 2_000_000 },
           { label: "150 Print — Max 3 Jam", price: 2_500_000 },
@@ -61,9 +63,10 @@ export const PRICING: FormatPricing[] = [
     tables: [
       {
         tier: "unlimited",
-        title: "Unlimited Prints",
+        title: "Unlimited Prints — Puas Tanpa Batas",
         description:
-          "Jumlah cetak foto bebas/tidak terbatas selama jam operasional masih berlangsung.",
+          "Biarkan setiap tamu pulang membawa kenangan — tanpa kompromi, tanpa hitungan cetak.",
+        recommended: true,
         rows: [
           { label: "2 Jam Operasional", price: 3_500_000 },
           { label: "3 Jam Operasional", price: 4_000_000 },
@@ -73,9 +76,9 @@ export const PRICING: FormatPricing[] = [
       },
       {
         tier: "limited",
-        title: "Limited Prints",
+        title: "Limited Prints — Hemat, Tetap Berkesan",
         description:
-          "Jumlah cetak foto terbatas sesuai jumlah print yang di order dengan batas maksimal jam operasional.",
+          "Kontrol budget tanpa mengurangi keseruan momen spesial Anda.",
         rows: [
           { label: "100 Print — Max 2 Jam", price: 2_500_000 },
           { label: "150 Print — Max 3 Jam", price: 3_000_000 },
