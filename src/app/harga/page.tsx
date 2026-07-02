@@ -1,8 +1,28 @@
  import type { Metadata } from "next";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PriceTable } from "@/components/PriceTable";
+import { PrintComparisonTable } from "@/components/PrintComparisonTable";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PRICING, SERVICE_INCLUDES } from "@/data/packages";
+
+const [FORMAT_2R, ...OTHER_FORMATS] = PRICING;
+
+function FormatSection({ format }: { format: (typeof PRICING)[number] }) {
+  return (
+    <div>
+      <div className="text-center">
+        <h2 className="font-serif text-2xl font-bold uppercase tracking-wide">{format.name}</h2>
+        <p className="mt-1 text-sm font-light italic text-cream/70">{format.subtitle}</p>
+      </div>
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {format.tables.map((table) => (
+          <PriceTable key={table.tier} table={table} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: "Harga",
@@ -15,21 +35,12 @@ export default function HargaPage() {
       <SectionHeading eyebrow="Price List" title="Our Packages" script="choose your moment" />
 
       <div className="mt-14 space-y-20">
-        {PRICING.map((format) => (
-          <div key={format.format}>
-            <div className="text-center">
-              <h2 className="font-serif text-2xl font-bold uppercase tracking-wide">
-                {format.name}
-              </h2>
-              <p className="mt-1 text-sm font-light italic text-cream/70">{format.subtitle}</p>
-            </div>
+        <FormatSection format={FORMAT_2R} />
 
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {format.tables.map((table) => (
-                <PriceTable key={table.tier} table={table} />
-              ))}
-            </div>
-          </div>
+        <PrintComparisonTable />
+
+        {OTHER_FORMATS.map((format) => (
+          <FormatSection key={format.format} format={format} />
         ))}
       </div>
 

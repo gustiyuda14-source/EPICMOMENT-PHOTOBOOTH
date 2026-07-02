@@ -37,6 +37,22 @@ export const WHY_PHOTOBOOTH = [
   },
 ];
 
+export const PRINT_COMPARISON = [
+  { aspect: "Batasan utama", limited: "Jumlah lembar (kuota)", unlimited: "Durasi waktu sewa" },
+  { aspect: "Berhenti cetak saat", limited: "Kuota habis", unlimited: "Waktu sewa habis" },
+  { aspect: "Harga", limited: "Lebih murah", unlimited: "Lebih mahal" },
+  {
+    aspect: "Cocok untuk",
+    limited: "Acara kecil / budget terbatas",
+    unlimited: "Acara besar / tamu banyak",
+  },
+  {
+    aspect: "Risiko biaya kertas",
+    limited: "Ditanggung klien (terbatas)",
+    unlimited: "Ditanggung vendor",
+  },
+];
+
 export const EQUIPMENT_SPECS = [
   "Kamera DSLR Canon 24MP",
   "Layar sentuh 24 inci",
