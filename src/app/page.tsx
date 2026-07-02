@@ -3,13 +3,9 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SparkleField } from "@/components/Sparkle";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { PORTFOLIO } from "@/data/portfolio";
 import { PRICING } from "@/data/packages";
 import { WHY_PHOTOBOOTH } from "@/data/policies";
 import { SITE } from "@/data/site";
-
-const FEATURED = PORTFOLIO.slice(0, 6);
-const CLIENTS = ["D'AJIKS", "Emina x Kochi Anduonohu", "Universitas Halu Oleo", "Hana & Ogi"];
 
 export default function HomePage() {
   return (
@@ -48,15 +44,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-cream/10 bg-maroon-deep py-8">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-cream/50">
-          <span className="text-cream/70">Dipercaya oleh:</span>
-          {CLIENTS.map((c) => (
-            <span key={c}>{c}</span>
-          ))}
-        </div>
-      </section>
-
       <section className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading eyebrow="Kenapa Harus" title="Pakai PhotoBooth?" />
         <div className="mt-14 grid gap-8 sm:grid-cols-3">
@@ -69,31 +56,6 @@ export default function HomePage() {
               <p className="mt-3 text-sm font-light text-cream/70">{item.description}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <SectionHeading eyebrow="Portfolio" title="Momen Epic Kami" script="baru-baru ini" />
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3">
-          {FEATURED.map((item) => (
-            <div key={item.src} className="photo-strip relative aspect-[4/5] overflow-hidden">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 640px) 33vw, 50vw"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="mt-12 text-center">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center justify-center rounded-full border-2 border-cream px-8 py-3 font-serif text-sm font-bold uppercase tracking-[0.15em] transition hover:bg-cream hover:text-maroon-deep"
-          >
-            Lihat Semua Portfolio
-          </Link>
         </div>
       </section>
 
