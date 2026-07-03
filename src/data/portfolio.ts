@@ -18,7 +18,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     src: "/images/portfolio/wedding/wedding-03.jpg",
     category: "wedding",
     title: "Adat Wedding",
-    alt: "Pengantin adat tradisional berpose di photo booth Epic Moment",
+    alt: "Pengantin adat tradisional berpose di photobooth Epic Moment",
   },
   {
     src: "/images/portfolio/wedding/wedding-09.jpg",
@@ -36,7 +36,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     src: "/images/portfolio/wedding/wedding-04.jpg",
     category: "wedding",
     title: "The Wedding",
-    alt: "Pengantin bersama tamu berseragam di photo booth",
+    alt: "Pengantin bersama tamu berseragam di photobooth",
   },
   {
     src: "/images/portfolio/wedding/wedding-02.jpg",
@@ -48,7 +48,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     src: "/images/portfolio/wedding/wedding-05.jpg",
     category: "wedding",
     title: "The Wedding of Hana & Ogi",
-    alt: "Bridesmaid bertiga menunjukkan hasil cetak photo booth",
+    alt: "Bridesmaid bertiga menunjukkan hasil cetak photobooth",
   },
   {
     src: "/images/portfolio/wedding/wedding-10.jpg",
@@ -66,7 +66,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     src: "/images/portfolio/wedding/wedding-06.jpg",
     category: "wedding",
     title: "Traditional Wedding",
-    alt: "Tamu wanita memegang kipas cetakan foto photo booth",
+    alt: "Tamu wanita memegang kipas cetakan foto photobooth",
   },
   {
     src: "/images/portfolio/wedding/wedding-07.jpg",
@@ -84,13 +84,13 @@ export const PORTFOLIO: PortfolioItem[] = [
     src: "/images/portfolio/corporate/corporate-01.jpg",
     category: "corporate",
     title: "Corporate Gathering",
-    alt: "Keluarga berseragam batik berfoto di photo booth",
+    alt: "Keluarga berseragam batik berfoto di photobooth",
   },
   {
     src: "/images/portfolio/corporate/corporate-02.jpg",
     category: "corporate",
     title: "Community Gathering",
-    alt: "Rombongan pria berbatik berpose di photo booth",
+    alt: "Rombongan pria berbatik berpose di photobooth",
   },
   {
     src: "/images/portfolio/corporate/corporate-03.jpg",

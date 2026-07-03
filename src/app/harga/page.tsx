@@ -61,7 +61,7 @@ export default function HargaPage() {
           Punya pertanyaan soal paket yang cocok untuk acara Anda?
         </p>
         <div className="mt-6">
-          <WhatsAppButton message="Halo Epic Moment Photo Booth, saya ingin konsultasi paket harga photobooth.">
+          <WhatsAppButton message="Halo Epic Moment PhotoBooth, saya ingin konsultasi paket harga photobooth.">
             Konsultasi via WhatsApp
           </WhatsAppButton>
         </div>

@@ -6,25 +6,26 @@ import { SITE } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
-  description: `${SITE.name} — crew profesional dan peralatan modern untuk photo booth rental di ${SITE.city}.`,
+  description: `${SITE.name} — crew profesional dan peralatan modern untuk photobooth rental di ${SITE.city}.`,
 };
 
 export default function TentangKamiPage() {
   return (
     <div className="mx-auto max-w-5xl px-6 py-20">
-      <SectionHeading eyebrow="Tentang Kami" title="Epic Moment Photo Booth" script="simple & modern look" />
+      <SectionHeading eyebrow="Tentang Kami" title="Epic Moment PhotoBooth" script="simple & modern look" />
 
       <p className="mx-auto mt-6 max-w-2xl text-center text-sm font-light text-cream/70">
-        Berbasis di {SITE.city}, kami menghadirkan photo booth modern dengan crew profesional
+        Berbasis di {SITE.city}, kami menghadirkan photobooth modern dengan crew profesional
         untuk membuat setiap momen acara Anda jadi kenangan yang epic.
       </p>
 
-      <div className="relative mt-14 aspect-video overflow-hidden rounded-2xl">
+      <div className="mt-14 flex justify-center">
         <Image
           src="/images/equipment/hardware-01.png"
-          alt="Unit photo booth Epic Moment dengan studio lighting"
-          fill
-          className="object-cover"
+          alt="Unit photobooth Epic Moment dengan studio lighting"
+          width={941}
+          height={1672}
+          className="h-auto w-full max-w-xs rounded-2xl shadow-2xl sm:max-w-sm"
         />
       </div>
 
@@ -60,7 +61,7 @@ export default function TentangKamiPage() {
         {["/images/equipment/crew-01.jpg", "/images/equipment/booth-01.jpg", "/images/equipment/crew-02.jpg"].map(
           (src) => (
             <div key={src} className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-              <Image src={src} alt="Crew Epic Moment Photo Booth sedang bertugas" fill className="object-cover" />
+              <Image src={src} alt="Crew Epic Moment PhotoBooth sedang bertugas" fill className="object-cover" />
             </div>
           )
         )}

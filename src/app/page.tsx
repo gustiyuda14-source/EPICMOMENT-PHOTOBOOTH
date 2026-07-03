@@ -13,7 +13,7 @@ export default function HomePage() {
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden text-center">
         <Image
           src="/images/hero/home-hero.png"
-          alt="Unit Epic Moment Photo Booth dengan studio lighting"
+          alt="Unit Epic Moment PhotoBooth dengan studio lighting"
           fill
           priority
           className="object-cover object-center"
@@ -27,11 +27,11 @@ export default function HomePage() {
             Memorable
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-base font-light text-cream/85 sm:text-lg">
-            Premium photo booth rental di {SITE.city}. Bawa keceriaan dan kenangan epic untuk
+            Premium photobooth rental di {SITE.city}. Bawa keceriaan dan kenangan epic untuk
             Wedding, Corporate Event, dan acara spesial lainnya.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <WhatsAppButton message="Halo Epic Moment Photo Booth, saya ingin tanya-tanya soal sewa photobooth.">
+            <WhatsAppButton message="Halo Epic Moment PhotoBooth, saya ingin tanya-tanya soal sewa photobooth.">
               Book Now
             </WhatsAppButton>
             <Link
@@ -92,7 +92,7 @@ export default function HomePage() {
             Konsultasikan kebutuhan acara Anda dengan admin kami sekarang.
           </p>
           <div className="mt-8">
-            <WhatsAppButton message="Halo Epic Moment Photo Booth, saya ingin booking photobooth untuk acara saya.">
+            <WhatsAppButton message="Halo Epic Moment PhotoBooth, saya ingin booking photobooth untuk acara saya.">
               Chat Admin Sekarang
             </WhatsAppButton>
           </div>

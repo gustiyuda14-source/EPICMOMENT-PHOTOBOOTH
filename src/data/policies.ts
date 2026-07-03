@@ -12,10 +12,10 @@ export const PAYMENT_NOTE =
 
 export const ON_SITE_REQUIREMENTS = [
   "Kami hadir 1 jam sebelum waktu operasional yang ditentukan client untuk set up alat.",
-  "Lokasi photo booth tidak boleh terpapar matahari langsung / hujan, karena dapat merusak peralatan.",
+  "Lokasi photobooth tidak boleh terpapar matahari langsung / hujan, karena dapat merusak peralatan.",
   "Space booth 3x3 meter, dengan background yang disiapkan client atau simple background dari kami.",
   "Dibutuhkan sumber listrik terdekat — kami menyediakan kabel roll 10–15 meter untuk menjangkau sumber listrik.",
-  "2 crew profesional standby untuk operasional photo booth dari persiapan sampai selesai acara.",
+  "2 crew profesional standby untuk operasional photobooth dari persiapan sampai selesai acara.",
   "Untuk acara wedding, pengantin berkenan melakukan sesi foto di awal acara.",
 ];
 
@@ -23,7 +23,7 @@ export const WHY_PHOTOBOOTH = [
   {
     title: "Bentuk Apresiasi Kepada Tamu",
     description:
-      "Photo booth adalah cara sederhana menunjukkan apresiasi kepada tamu yang hadir di acara Anda.",
+      "Photobooth adalah cara sederhana menunjukkan apresiasi kepada tamu yang hadir di acara Anda.",
   },
   {
     title: "Souvenir Anti Mainstream",
@@ -33,7 +33,7 @@ export const WHY_PHOTOBOOTH = [
   {
     title: "Experience & Suasana Berbeda",
     description:
-      "Menghadirkan pengalaman dan suasana seru yang tidak ditemukan di photo booth pada umumnya.",
+      "Menghadirkan pengalaman dan suasana seru yang tidak ditemukan di photobooth pada umumnya.",
   },
 ];
 

@@ -5,7 +5,7 @@ import { FrameGallery } from "@/components/FrameGallery";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Kumpulan momen wedding, corporate event, dan acara spesial bersama Epic Moment Photo Booth.",
+  description: "Kumpulan momen wedding, corporate event, dan acara spesial bersama Epic Moment PhotoBooth.",
 };
 
 export default function PortfolioPage() {

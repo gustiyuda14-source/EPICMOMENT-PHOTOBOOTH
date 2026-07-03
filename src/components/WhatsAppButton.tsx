@@ -22,7 +22,7 @@ export function WhatsAppButton({ message, children, className = "" }: WhatsAppBu
 export function WhatsAppFloatingButton() {
   return (
     <a
-      href={waLink("Halo Epic Moment Photo Booth, saya ingin bertanya tentang sewa photobooth.")}
+      href={waLink("Halo Epic Moment PhotoBooth, saya ingin bertanya tentang sewa photobooth.")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat via WhatsApp"

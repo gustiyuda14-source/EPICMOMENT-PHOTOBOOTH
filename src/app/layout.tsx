@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Sewa photo booth premium di Kendari untuk wedding, corporate event, dan acara spesial lainnya. Cetak instan, custom layout, crew profesional.",
+    "Sewa photobooth premium di Kendari untuk wedding, corporate event, dan acara spesial lainnya. Cetak instan, custom layout, crew profesional.",
   icons: { icon: "/favicon.png" },
   openGraph: {
     title: `${SITE.name} | Sewa Photobooth ${SITE.city}`,
-    description: "Make Your Event Memorable — premium photo booth rental di Kendari.",
+    description: "Make Your Event Memorable — premium photobooth rental di Kendari.",
     locale: "id_ID",
     type: "website",
   },

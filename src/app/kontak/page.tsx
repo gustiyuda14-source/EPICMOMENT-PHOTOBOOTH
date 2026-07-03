@@ -19,7 +19,7 @@ export default function KontakPage() {
       </p>
 
       <div className="mt-10 flex flex-col items-center gap-4">
-        <WhatsAppButton message="Halo Epic Moment Photo Booth, saya ingin bertanya-tanya.">
+        <WhatsAppButton message="Halo Epic Moment PhotoBooth, saya ingin bertanya-tanya.">
           Chat WhatsApp — {SITE.phoneDisplay}
         </WhatsAppButton>
 

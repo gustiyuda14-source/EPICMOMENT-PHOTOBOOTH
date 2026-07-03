@@ -1,7 +1,7 @@
 const instagramHandle = process.env.NEXT_PUBLIC_IG_HANDLE ?? "epicmoment_kdi";
 
 export const SITE = {
-  name: "Epic Moment Photo Booth",
+  name: "Epic Moment PhotoBooth",
   tagline: "Make Your Event Memorable",
   city: "Kendari",
   phoneDisplay: process.env.NEXT_PUBLIC_WA_PHONE_DISPLAY ?? "0822-7101-1231",

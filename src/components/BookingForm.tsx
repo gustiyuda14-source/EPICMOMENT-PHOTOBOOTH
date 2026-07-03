@@ -74,7 +74,7 @@ export function BookingForm() {
         </Field>
       </div>
 
-      <Field label="Format Photo Booth">
+      <Field label="Format PhotoBooth">
         <select
           value={format}
           onChange={(e) => setFormat(e.target.value as typeof format)}

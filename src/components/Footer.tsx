@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm font-light text-cream/70">
-              Premium photo booth rental di {SITE.city}. Bikin momen acaramu jadi kenangan
+              Premium photobooth rental di {SITE.city}. Bikin momen acaramu jadi kenangan
               yang epic.
             </p>
           </div>
