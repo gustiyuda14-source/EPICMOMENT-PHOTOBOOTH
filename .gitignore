@@ -38,5 +38,6 @@ next-env.d.ts
 /Screenshot*.png
 /LOGO UTAMA*.png
 /TAMBAHAN CONTOH FRAME/
+/TAMBAHAN SECTION 2R 4 R DAN PORTOFOLIO/
 .vercel
 .env*
