@@ -2,37 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { PORTFOLIO, PORTFOLIO_CATEGORIES, PortfolioCategory } from "@/data/portfolio";
-import { FilterButton } from "./FilterButton";
+import { PORTFOLIO } from "@/data/portfolio";
 import { Lightbox } from "./Lightbox";
 
-type FilterValue = PortfolioCategory | "all";
-
 export function PortfolioGallery() {
-  const [filter, setFilter] = useState<FilterValue>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
-  const items = filter === "all" ? PORTFOLIO : PORTFOLIO.filter((i) => i.category === filter);
 
   return (
     <div>
-      <div className="mb-10 flex flex-wrap justify-center gap-3">
-        <FilterButton active={filter === "all"} onClick={() => setFilter("all")}>
-          Semua
-        </FilterButton>
-        {PORTFOLIO_CATEGORIES.map((cat) => (
-          <FilterButton
-            key={cat.value}
-            active={filter === cat.value}
-            onClick={() => setFilter(cat.value)}
-          >
-            {cat.label}
-          </FilterButton>
-        ))}
-      </div>
-
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
-        {items.map((item, idx) => (
+        {PORTFOLIO.map((item, idx) => (
           <button
             key={item.src}
             type="button"
@@ -58,7 +37,7 @@ export function PortfolioGallery() {
 
       {lightboxIndex !== null && (
         <Lightbox
-          items={items}
+          items={PORTFOLIO}
           index={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
