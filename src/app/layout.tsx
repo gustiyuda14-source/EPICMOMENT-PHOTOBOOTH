@@ -65,7 +65,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
-        <div className="radiating-lines pointer-events-none fixed inset-0 -z-10" />
+        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+          <div className="bg-aurora absolute inset-0" />
+          <div className="aurora-blob aurora-blob--crimson" />
+          <div className="aurora-blob aurora-blob--gold" />
+          <div className="bg-motif absolute inset-0" />
+        </div>
         <Navbar />
         <main className="pt-20">{children}</main>
         <Footer />

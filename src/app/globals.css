@@ -25,26 +25,46 @@
     animation: sparkle-pulse 2.4s infinite ease-in-out alternate;
   }
 
-  .radiating-lines {
-    background-image: radial-gradient(
-        circle at 100% 50%,
-        transparent 20%,
-        rgba(255, 255, 255, 0.25) 21%,
-        rgba(255, 255, 255, 0.25) 34%,
-        transparent 35%,
-        transparent
-      ),
-      radial-gradient(
-        circle at 0% 50%,
-        transparent 20%,
-        rgba(255, 255, 255, 0.25) 21%,
-        rgba(255, 255, 255, 0.25) 34%,
-        transparent 35%,
-        transparent
-      );
-    background-size: 150% 150%;
-    background-position: center;
-    opacity: 0.12;
+  /* Satin-aurora wash: layered crimson glows + faint gold, echoes the
+     satin-red price list artwork. Static gradients = zero runtime cost. */
+  .bg-aurora {
+    background:
+      radial-gradient(ellipse 90% 65% at 12% 8%, rgba(163, 18, 15, 0.5), transparent 62%),
+      radial-gradient(ellipse 75% 55% at 88% 18%, rgba(139, 10, 10, 0.42), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 80% 90%, rgba(232, 196, 119, 0.09), transparent 58%),
+      radial-gradient(ellipse 85% 70% at 22% 96%, rgba(74, 4, 4, 0.65), transparent 65%);
+  }
+
+  /* Slow-drifting glow blobs layered over the aurora for gentle life.
+     Pre-blurred radial gradients + transform animation only (GPU-cheap). */
+  .aurora-blob {
+    position: absolute;
+    width: 55vmax;
+    height: 55vmax;
+    border-radius: 50%;
+    will-change: transform;
+    animation: blob-drift 48s ease-in-out infinite alternate;
+  }
+
+  .aurora-blob--crimson {
+    top: -18%;
+    left: -12%;
+    background: radial-gradient(circle, rgba(163, 18, 15, 0.35), transparent 68%);
+  }
+
+  .aurora-blob--gold {
+    bottom: -22%;
+    right: -14%;
+    background: radial-gradient(circle, rgba(232, 196, 119, 0.1), transparent 65%);
+    animation-delay: -24s;
+  }
+
+  /* Scattered photobooth silhouettes (camera, strip, polaroid, sparkles) —
+     barely-there texture so photos stay the hero. */
+  .bg-motif {
+    background-image: url("/images/brand/bg-motif.svg");
+    background-size: 520px 520px;
+    opacity: 0.045;
   }
 
   .photo-strip {
@@ -60,5 +80,14 @@
   100% {
     transform: scale(1.15);
     opacity: 1;
+  }
+}
+
+@keyframes blob-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(6vmax, 4vmax) scale(1.12);
   }
 }
