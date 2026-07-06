@@ -33,7 +33,9 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+      // threshold 0: fire on first visible pixel. A ratio threshold never
+      // fires for elements taller than the viewport (e.g. masonry galleries).
+      { threshold: 0, rootMargin: "0px 0px -48px 0px" }
     );
 
     observer.observe(el);

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 type LightboxItem = { src: string; alt: string; title: string };
@@ -32,7 +33,9 @@ export function Lightbox({
     };
   }, [index, items.length, onClose, onNavigate]);
 
-  return (
+  // Portal to <body>: keeps position:fixed anchored to the viewport even if
+  // an ancestor (transforms, filters, will-change) forms a containing block.
+  return createPortal(
     <div
       className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-md animate-[hero-rise_0.3s_ease-out]"
       role="dialog"
@@ -88,7 +91,8 @@ export function Lightbox({
           }}
         />
       )}
-    </div>
+    </div>,
+    document.body
   );
 }
 
