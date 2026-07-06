@@ -11,24 +11,30 @@ export function SectionHeading({
   script,
   align = "center",
 }: SectionHeadingProps) {
+  const centered = align === "center";
+
   return (
-    <div className={align === "center" ? "text-center" : "text-left"}>
+    <div className={centered ? "text-center" : "text-left"}>
       {eyebrow && (
         <p
-          className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.35em] text-cream ${
-            align === "center" ? "justify-center" : "justify-start"
+          className={`mb-4 flex items-center gap-4 text-[0.7rem] font-bold uppercase tracking-[0.35em] text-cream/80 ${
+            centered ? "justify-center" : "justify-start"
           }`}
         >
-          <span className="text-gold">✦</span>
-          {eyebrow}
-          <span className="text-gold">✦</span>
+          <span className="divider-gold w-10" aria-hidden="true" />
+          <span className="flex items-center gap-2">
+            <span className="text-gold">✦</span>
+            {eyebrow}
+            <span className="text-gold">✦</span>
+          </span>
+          <span className="divider-gold w-10" aria-hidden="true" />
         </p>
       )}
-      <h2 className="font-serif text-3xl font-bold uppercase tracking-[0.08em] sm:text-4xl">
+      <h2 className="text-gold-gradient font-serif text-3xl font-bold uppercase tracking-[0.08em] sm:text-4xl [text-wrap:balance]">
         {title}
       </h2>
       {script && (
-        <p className="mt-1 font-script text-3xl text-gold sm:text-4xl">{script}</p>
+        <p className="mt-2 font-script text-3xl text-gold/90 sm:text-4xl">{script}</p>
       )}
     </div>
   );

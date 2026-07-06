@@ -16,18 +16,21 @@ export function PortfolioGallery() {
             key={item.src}
             type="button"
             onClick={() => setLightboxIndex(idx)}
-            className="group relative block w-full overflow-hidden rounded-lg break-inside-avoid"
+            className="group relative block w-full overflow-hidden rounded-xl break-inside-avoid ring-1 ring-cream/10 transition-all duration-500 ease-out-expo hover:ring-gold/50 hover:shadow-gold-soft"
           >
             <Image
               src={item.src}
               alt={item.alt}
               width={800}
               height={1000}
-              className="w-full transition-transform duration-500 group-hover:scale-105"
+              className="w-full transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             />
-            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-maroon-deep/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100">
-              <span className="p-4 font-serif text-sm font-semibold uppercase tracking-wide text-cream">
+            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-maroon-deep/90 via-maroon-deep/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <span className="w-full translate-y-3 p-4 text-left font-serif text-sm font-semibold uppercase tracking-wide text-cream transition-transform duration-500 ease-out-expo group-hover:translate-y-0">
+                <span className="mr-2 text-gold" aria-hidden="true">
+                  ✦
+                </span>
                 {item.title}
               </span>
             </div>

@@ -3,8 +3,39 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-maroon-deep text-cream font-sans;
+    @apply bg-maroon-deep text-cream font-sans antialiased;
+  }
+
+  ::selection {
+    background: theme("colors.gold.DEFAULT");
+    color: theme("colors.maroon.deep");
+  }
+
+  /* Thin, brand-toned scrollbar (WebKit) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #2b0000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(232, 196, 119, 0.25);
+    border-radius: 8px;
+    border: 2px solid #2b0000;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(232, 196, 119, 0.45);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(232, 196, 119, 0.7);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -68,7 +99,137 @@
   }
 
   .photo-strip {
-    @apply bg-cream p-2 pb-6 shadow-xl rotate-[-2deg];
+    @apply bg-cream p-2 pb-6 shadow-xl rotate-[-2deg] transition-transform duration-500 ease-out-expo;
+  }
+  .photo-strip:hover {
+    @apply rotate-0 -translate-y-1;
+  }
+
+  /* ---- Typography ---- */
+
+  /* Champagne-gold gradient headline, clipped to text. */
+  .text-gold-gradient {
+    background: linear-gradient(100deg, #f7e7b4 0%, #e8c477 45%, #cfa14e 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Hairline gold rule that fades at both ends. */
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(232, 196, 119, 0.45),
+      transparent
+    );
+  }
+
+  /* ---- Buttons ---- */
+
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-3.5 font-serif text-sm font-bold uppercase tracking-[0.15em] transition-all duration-300 ease-out-expo;
+  }
+
+  /* Primary: solid champagne gradient with a light sweep on hover. */
+  .btn-gold {
+    @apply btn bg-gold-gradient text-maroon-deep shadow-gold-glow;
+  }
+  .btn-gold::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-gold:hover {
+    @apply -translate-y-0.5 shadow-gold-glow;
+    filter: brightness(1.05);
+  }
+  .btn-gold:hover::after {
+    transform: translateX(120%);
+  }
+
+  /* Ghost: hairline glass outline that warms to gold. */
+  .btn-ghost {
+    @apply btn border border-cream/40 bg-cream/[0.04] text-cream backdrop-blur-sm;
+  }
+  .btn-ghost:hover {
+    @apply -translate-y-0.5 border-gold/70 text-gold shadow-gold-soft;
+  }
+
+  /* ---- Cards ---- */
+
+  .card {
+    @apply rounded-2xl border border-cream/10 bg-gradient-to-b from-cream/[0.07] to-cream/[0.02] shadow-card backdrop-blur-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-out-expo;
+  }
+  .card-hover:hover {
+    @apply -translate-y-1.5 border-gold/30 shadow-gold-soft;
+  }
+
+  /* ---- Form fields ---- */
+
+  .input {
+    @apply w-full rounded-xl border border-cream/20 bg-cream/5 px-4 py-3 text-[0.95rem] text-cream transition-all duration-300;
+  }
+  .input::placeholder {
+    color: rgba(253, 253, 253, 0.35);
+  }
+  .input:focus {
+    outline: none;
+    border-color: rgba(232, 196, 119, 0.8);
+    box-shadow: 0 0 0 3px rgba(232, 196, 119, 0.15);
+    background: rgba(253, 253, 253, 0.08);
+  }
+
+  /* ---- Motion ---- */
+
+  /* Scroll-reveal: starts hidden, Reveal component flips it visible. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Hero entrance: plays once on load, staggered via --rise-delay. */
+  .hero-rise {
+    opacity: 0;
+    animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--rise-delay, 0ms);
+  }
+
+  /* Very slow settle-in on the hero image for a cinematic first paint. */
+  .kenburns {
+    animation: ken-burns 22s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* Soft breathing ring behind the floating WhatsApp button. */
+  .pulse-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgba(37, 211, 102, 0.45);
+    animation: pulse-ring 2.6s ease-out infinite;
   }
 }
 
@@ -89,5 +250,72 @@
   }
   100% {
     transform: translate(6vmax, 4vmax) scale(1.12);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.4;
+  }
+}
+
+/* Accessibility: strip motion for users who ask for it. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .hero-rise {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+  .kenburns,
+  .aurora-blob,
+  .sparkle,
+  .pulse-ring::before {
+    animation: none;
   }
 }

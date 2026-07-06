@@ -32,7 +32,7 @@ export function BookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-cream/15 bg-cream/5 p-6 sm:p-8">
+    <form onSubmit={handleSubmit} className="card space-y-5 p-6 sm:p-8">
       <Field label="Nama Anda">
         <input
           required
@@ -97,31 +97,9 @@ export function BookingForm() {
         />
       </Field>
 
-      <button
-        type="submit"
-        className="w-full rounded-full bg-gold py-3 font-serif font-bold uppercase tracking-[0.15em] text-maroon-deep transition hover:bg-gold-light"
-      >
-        Kirim via WhatsApp
+      <button type="submit" className="btn-gold w-full">
+        <span className="relative z-10">Kirim via WhatsApp</span>
       </button>
-
-      <style jsx>{`
-        .input {
-          width: 100%;
-          border-radius: 0.75rem;
-          border: 1px solid rgba(253, 253, 253, 0.2);
-          background: rgba(253, 253, 253, 0.05);
-          padding: 0.7rem 1rem;
-          color: #fdfdfd;
-          font-size: 0.95rem;
-        }
-        .input::placeholder {
-          color: rgba(253, 253, 253, 0.4);
-        }
-        .input:focus {
-          outline: none;
-          border-color: #e8c477;
-        }
-      `}</style>
     </form>
   );
 }

@@ -25,7 +25,7 @@ const script = Alex_Brush({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://epicmomentphotobooth.com"),
+  metadataBase: new URL("https://epicmoment-photobooth.vercel.app"),
   title: {
     default: `${SITE.name} | Sewa Photobooth ${SITE.city}`,
     template: `%s | ${SITE.name}`,
