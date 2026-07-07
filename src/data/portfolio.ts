@@ -87,22 +87,10 @@ export const PORTFOLIO: PortfolioItem[] = [
     alt: "Pengantin berbusana putih berpose di depan backdrop bunga merah",
   },
   {
-    src: "/images/portfolio/wedding/wedding-15.jpg",
-    category: "wedding",
-    title: "Traditional Wedding",
-    alt: "Pengantin adat dengan mahkota emas dan seragam militer",
-  },
-  {
     src: "/images/portfolio/wedding/wedding-12.jpg",
     category: "wedding",
     title: "Traditional Wedding",
     alt: "Rombongan tamu berbusana kebaya krem melihat hasil cetak photobooth",
-  },
-  {
-    src: "/images/portfolio/wedding/wedding-14.jpg",
-    category: "wedding",
-    title: "Traditional Wedding",
-    alt: "Rombongan tamu berbusana kebaya kuning berpose ceria",
   },
   {
     src: "/images/portfolio/corporate/corporate-01.jpg",
